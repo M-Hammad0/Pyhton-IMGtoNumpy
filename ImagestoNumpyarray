@@ -1,0 +1,9 @@
+import numpy as np
+import glob
+from PIL import Image
+import matplotlib.pylab as plt
+filelist= glob.glob('photos/*.jpg')
+for file in filelist:
+    image = Image.open(file)
+    img = image.resize((200,200))
+x = np.array([np.array(img) for fname in filelist])
